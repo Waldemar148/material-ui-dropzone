@@ -14,13 +14,15 @@ const styles = {
         opacity: 0,
         top: -5,
         right: -5,
-        width: 40,
-        height: 40
+        width: 35,
+        height: 35
     },
     smallPreviewImg: {
         height: 100,
         width: 'initial',
         maxWidth: '100%',
+        width: '100%',
+        flexBasis: '100%',
         marginTop: 5,
         marginRight: 10,
         color: 'rgba(0, 0, 0, 0.87)',
@@ -34,6 +36,9 @@ const styles = {
     imageContainer: {
         position: 'relative',
         zIndex: 10,
+        width: '100%',
+        flexBasis: '100%',
+        maxWidth: '100%',
         textAlign: 'center',
         '&:hover $smallPreviewImg': {
             opacity: 0.3

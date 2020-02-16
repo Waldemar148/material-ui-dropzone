@@ -1216,6 +1216,21 @@ var createClass = function () {
   };
 }();
 
+var defineProperty = function (obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+};
+
 var _extends$1 = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -1371,6 +1386,8 @@ exports.default = _default;
 
 var DeleteIcon = unwrapExports(Delete);
 
+var _smallPreviewImg;
+
 var styles$2 = {
     removeBtn: {
         transition: '.5s ease',
@@ -1378,26 +1395,20 @@ var styles$2 = {
         opacity: 0,
         top: -5,
         right: -5,
-        width: 40,
-        height: 40
+        width: 35,
+        height: 35
     },
-    smallPreviewImg: {
+    smallPreviewImg: (_smallPreviewImg = {
         height: 100,
         width: 'initial',
-        maxWidth: '100%',
-        marginTop: 5,
-        marginRight: 10,
-        color: 'rgba(0, 0, 0, 0.87)',
-        transition: 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms',
-        boxSizing: 'border-box',
-        boxShadow: 'rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px',
-        borderRadius: 2,
-        zIndex: 5,
-        opacity: 1
-    },
+        maxWidth: '100%'
+    }, defineProperty(_smallPreviewImg, 'width', '100%'), defineProperty(_smallPreviewImg, 'flexBasis', '100%'), defineProperty(_smallPreviewImg, 'marginTop', 5), defineProperty(_smallPreviewImg, 'marginRight', 10), defineProperty(_smallPreviewImg, 'color', 'rgba(0, 0, 0, 0.87)'), defineProperty(_smallPreviewImg, 'transition', 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms'), defineProperty(_smallPreviewImg, 'boxSizing', 'border-box'), defineProperty(_smallPreviewImg, 'boxShadow', 'rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px'), defineProperty(_smallPreviewImg, 'borderRadius', 2), defineProperty(_smallPreviewImg, 'zIndex', 5), defineProperty(_smallPreviewImg, 'opacity', 1), _smallPreviewImg),
     imageContainer: {
         position: 'relative',
         zIndex: 10,
+        width: '100%',
+        flexBasis: '100%',
+        maxWidth: '100%',
         textAlign: 'center',
         '&:hover $smallPreviewImg': {
             opacity: 0.3
